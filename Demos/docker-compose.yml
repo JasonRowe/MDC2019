@@ -1,0 +1,24 @@
+version: '3.0'
+
+services:
+  rabbitmq-demo:
+    image: "rabbitmq:3-management"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+      - "5671:5671"
+  publisher-demo:
+    environment:
+        - RabbitMQConnetionString=host=rabbitmq-demo;publisherConfirms=true;timeout=300
+    build:
+      context: ./PublisherExample/.
+  consumer-demo:
+    environment:
+        - RabbitMQConnetionString=host=rabbitmq-demo;timeout=300
+    build:
+      context: ./ConsumerExample/.
+  consumer-demo2:
+    environment:
+        - RabbitMQConnetionString=host=rabbitmq-demo;timeout=300
+    build:
+      context: ./ConsumerExample/.
