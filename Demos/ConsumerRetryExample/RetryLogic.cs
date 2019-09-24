@@ -1,8 +1,4 @@
-﻿// Copyright (c) 2019 Proto Labs, Inc. All Rights Reserved.
-using EasyNetQ;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using EasyNetQ;
 
 namespace ConsumerRetryExample
 {
