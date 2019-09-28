@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using Microsoft.Extensions.Configuration;
 
-namespace TCCC23.Publisher
+namespace Consumer
 {
 	public static class Configuration
 	{
@@ -12,6 +14,8 @@ namespace TCCC23.Publisher
 		public static string HelloWorldExchangeName => ConfigurationRoot.Value.GetValue<string>("HelloWorldExchangeName");
 
 		public static string HelloWorldRoutingKey => ConfigurationRoot.Value.GetValue<string>("HelloWorldRoutingKey");
+
+		public static string HelloWorldQueueName => ConfigurationRoot.Value.GetValue<string>("HelloWorldQueueName");
 
 		private static IConfigurationRoot LoadConfiguration()
 		{

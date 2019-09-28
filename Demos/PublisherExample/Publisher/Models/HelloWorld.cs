@@ -1,4 +1,4 @@
-﻿namespace TCCC23.Publisher.Models
+﻿namespace Publisher.Models
 {
 	public class HelloWorld
 	{

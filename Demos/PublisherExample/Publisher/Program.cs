@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading;
 using EasyNetQ;
-using TCCC23.Publisher.Models;
+using Publisher.Models;
 
-namespace TCCC23.Publisher
+namespace Publisher
 {
 	class Program
 	{

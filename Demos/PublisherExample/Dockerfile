@@ -6,4 +6,4 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:2.2
 WORKDIR /app
 COPY --from=base /out .
 
-ENTRYPOINT ["dotnet", "TCCC23.Publisher.dll"]
+ENTRYPOINT ["dotnet", "Publisher.dll"]

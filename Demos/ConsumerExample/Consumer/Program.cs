@@ -2,7 +2,7 @@
 using System.Text;
 using System.Threading;
 
-namespace TCCC23.Consumer
+namespace Consumer
 {
 	class Program
 	{

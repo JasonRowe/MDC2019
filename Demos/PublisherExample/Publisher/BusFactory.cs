@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using EasyNetQ;
 
-namespace TCCC23.Consumer
+namespace Publisher
 {
 	public class BusFactory : IDisposable
 	{
