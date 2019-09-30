@@ -7,13 +7,13 @@ namespace Consumer
 	{
 		private static readonly Lazy<IConfigurationRoot> ConfigurationRoot = new Lazy<IConfigurationRoot>(LoadConfiguration);
 
-		public static string Host => ConfigurationRoot.Value.GetValue<string>("RabbitMQConnetionString");
+		public static string Host => ConfigurationRoot.Value.GetValue<string>("Messaging:RabbitMQConnetionString");
 
-		public static string HelloWorldExchangeName => ConfigurationRoot.Value.GetValue<string>("HelloWorldExchangeName");
+		public static string HelloWorldExchangeName => ConfigurationRoot.Value.GetValue<string>("Messaging:Consume:HelloWorldExchangeName");
 
-		public static string HelloWorldRoutingKey => ConfigurationRoot.Value.GetValue<string>("HelloWorldRoutingKey");
+		public static string HelloWorldRoutingKey => ConfigurationRoot.Value.GetValue<string>("Messaging:Consume:HelloWorldRoutingKey");
 
-		public static string HelloWorldQueueName => ConfigurationRoot.Value.GetValue<string>("HelloWorldQueueName");
+		public static string HelloWorldQueueName => ConfigurationRoot.Value.GetValue<string>("Messaging:Consume:HelloWorldQueueName");
 
 		private static IConfigurationRoot LoadConfiguration()
 		{

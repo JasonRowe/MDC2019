@@ -7,11 +7,11 @@ namespace Publisher
 	{
 		private static readonly Lazy<IConfigurationRoot> ConfigurationRoot = new Lazy<IConfigurationRoot>(LoadConfiguration);
 
-		public static string Host => ConfigurationRoot.Value.GetValue<string>("RabbitMQConnetionString");
+		public static string Host => ConfigurationRoot.Value.GetValue<string>("Messaging:RabbitMQConnetionString");
 
-		public static string HelloWorldExchangeName => ConfigurationRoot.Value.GetValue<string>("HelloWorldExchangeName");
+		public static string HelloWorldExchangeName => ConfigurationRoot.Value.GetValue<string>("Messaging:Publish:HelloWorldExchangeName");
 
-		public static string HelloWorldRoutingKey => ConfigurationRoot.Value.GetValue<string>("HelloWorldRoutingKey");
+		public static string HelloWorldRoutingKey => ConfigurationRoot.Value.GetValue<string>("Messaging:Publish:HelloWorldRoutingKey");
 
 		private static IConfigurationRoot LoadConfiguration()
 		{
