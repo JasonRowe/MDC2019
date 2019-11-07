@@ -26,7 +26,8 @@ namespace ConsumerRetryExample
 				var errorQueue = bus.Advanced.QueueDeclare($"{queueName}_Error_Queue");
 
 				// Declare delay exchange and binding
-				var exchangeDelayed = bus.Advanced.ExchangeDeclare($"{exchangeName}_Delayed", ExchangeType.Topic, false, true, false,false,null, true);
+				var exchangeDelayed = bus.Advanced.ExchangeDeclare($"{exchangeName}_Delayed", ExchangeType.Topic, false, true, false, false, null, true);
+				// Pass in the queue used after delay.
 				bus.Advanced.Bind(exchangeDelayed, queue, routingKey);
 
 				// Setup error consumer handler.
@@ -56,7 +57,7 @@ namespace ConsumerRetryExample
 					var retryCount = RetryLogic.GetRetryCount(properties);
 
 					// Setup fake condition to throw an error for the demo.
-					if(retryCount < 3)
+					if (retryCount < 3)
 					{
 						Console.WriteLine($"Throwing error!");
 						throw new Exception("Consumer exception thrown.");
